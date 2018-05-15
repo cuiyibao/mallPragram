@@ -1,0 +1,11 @@
+.flex {
+  display: flex;
+}
+
+.flex_auto {
+  flex: 1;
+}
+
+.row {
+  width: 100%;
+}

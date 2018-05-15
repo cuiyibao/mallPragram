@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
 	"appid": "wx9796109a9fd01fe7",
-	"projectname": "carPargram",
+	"projectname": "mallPargram",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

@@ -1,11 +1,18 @@
 <!-- index.wxml -->
 <view class="container">
-  <block wx:for="{{list}}" wx:key="name">
-    <view>{{item.title}}</view>
-    <text>{{item.city}}</text>
-    <view>
-      <text>{{item.marketing_start}}</text>
-    </view>
-    <image src="{{item.img}}"></image>
-  </block>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrl}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="200" height="100" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view  class="menu-wrp">
+      <view class="menu-list" wx:for="{{menu.imgUrls}}">
+          <image class="menu-img" src="{{item}}"/>
+          <view  class="menu-desc" >{{menu.descs[index]}}</view>
+      </view>
+  </view>
+
 </view>

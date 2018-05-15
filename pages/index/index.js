@@ -1,21 +1,57 @@
 //index.js
+import { getSwiper } from '../../network/index/index'
 //获取应用实例
 const app = getApp()
 
-const API = require('../../utils/api.js')
-
 Page({
     data: {
+        indicatorDots: true,
+        vertical: false,
+        autoplay: true,
+        interval: 3000,
+        duration: 1000,
+        loadingHidden: false,  // loading
+        imgUrl: [
+            '/images/index/slider1.jpg',
+            '/images/index/slider2.jpg',
+            '/images/index/slider3.jpg',
+        ],
+        menu: {
+            imgUrls: [
+                'http://gw.alicdn.com/tps/i2/TB19BluIVXXXXX6XpXXN4ls0XXX-183-129.png?imgtag=avatar',
+                'http://gw.alicdn.com/tps/TB1FDOHLVXXXXcZXFXXXXXXXXXX-183-129.png?imgtag=avatar',
+                'http://gw.alicdn.com/tps/TB1PlmNLVXXXXXEXFXXXXXXXXXX-183-129.png?imgtag=avatar',
+                'http://gw.alicdn.com/tps/TB1RN0HMFXXXXXNXpXXXXXXXXXX-183-129.png?imgtag=avatar',
+                'http://gw.alicdn.com/tps/TB1exaOLVXXXXXeXFXXXXXXXXXX-183-129.png?imgtag=avatar',
+                'http://img.alicdn.com/tps/TB1GzMJLXXXXXXoXXXXXXXXXXXX-183-129.png',
+                'http://gw.alicdn.com/tps/i3/TB1Ewu2KVXXXXXkapXXN4ls0XXX-183-129.png',
+                'http://gw.alicdn.com/tps/TB1cniBJpXXXXataXXXXXXXXXXX-183-129.png?imgtag=avatar',
+                'http://img.alicdn.com/tps/TB1caopLVXXXXaDaXXXXXXXXXXX-183-129.png',
+                'http://gw.alicdn.com/tps/i1/TB1c1FMIpXXXXawXpXXN4ls0XXX-183-129.png?imgtag=avatar'
+            ],
+            descs: [
+                '天猫',
+                '聚划算',
+                '天猫国际',
+                '外卖',
+                '天猫超市',
+                '充值中心',
+                '阿里旅行',
+                '领金币',
+                '到家',
+                '分类'
+            ]
+        }
     },
     onLoad: function () {
         console.log('onLoad')
         var that = this
         // 使用 Mock
-        API.ajax('', function (res) {
+        getSwiper('', function (res) {
             //这里既可以获取模拟的res
             console.log(res)
             that.setData({
-                list:res.data
+                list: res.data
             })
         });
 
